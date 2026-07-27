@@ -1,4 +1,4 @@
-# Typograph
+# FontSnap
 
 A web tool to discover and download fonts from any website. Simply enter a URL to extract all fonts used on the page, preview them live, and download with a single click.
 
@@ -31,8 +31,8 @@ Always verify that you have proper licensing before using downloaded fonts in yo
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/TheNeovimmer/typo_graph.git
-cd typo_graph
+git clone https://github.com/TheNeovimmer/fontsnap.git
+cd fontsnap
 ```
 
 2. Install dependencies:

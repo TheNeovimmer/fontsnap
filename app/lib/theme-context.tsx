@@ -13,14 +13,14 @@ const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
 function getInitialTheme(): Theme {
   if (typeof window === 'undefined') return 'light';
-  const stored = localStorage.getItem('typograph-theme') as Theme | null;
+  const stored = localStorage.getItem('fontsnap-theme') as Theme | null;
   if (stored === 'dark' || stored === 'light') return stored;
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
 
 function applyTheme(theme: Theme) {
   document.documentElement.classList.toggle('dark', theme === 'dark');
-  localStorage.setItem('typograph-theme', theme);
+  localStorage.setItem('fontsnap-theme', theme);
 }
 
 export function useTheme() {

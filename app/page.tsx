@@ -77,13 +77,13 @@ export default function Home() {
               className="mt-5 max-w-2xl text-[0.9rem] leading-relaxed"
               style={{ color: isDark ? '#94a3b8' : '#64748b' }}
             >
-              Typograph is intended for research and testing. Identifying a font does not grant usage rights. Always confirm licensing with the original foundry before using fonts in production.
+              FontSnap is intended for research and testing. Identifying a font does not grant usage rights. Always confirm licensing with the original foundry before using fonts in production.
             </p>
             <div
               className="mt-8 flex items-center justify-center gap-2 text-[0.8rem]"
               style={{ color: isDark ? '#64748b' : '#64748b' }}
             >
-              <span>&copy; {new Date().getFullYear()} Typograph.</span>
+              <span>&copy; {new Date().getFullYear()} FontSnap.</span>
               <span
                 className="h-1 w-1 rounded-full"
                 style={{ backgroundColor: isDark ? '#475569' : '#cbd5e1' }}

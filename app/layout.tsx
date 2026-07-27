@@ -24,23 +24,23 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Typograph - Extract Fonts from Any Website",
+  title: "FontSnap - Extract Fonts from Any Website",
   description: "Discover and analyze fonts from any website. Just enter a URL and get instant access to all the fonts used.",
   openGraph: {
-    title: "Typograph",
+    title: "FontSnap",
     description: "Extract and analyze fonts from any website instantly.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Typograph OG Image",
+        alt: "FontSnap OG Image",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Typograph",
+    title: "FontSnap",
     description: "Extract and analyze fonts from any website instantly.",
     images: ["/og-image.png"],
   },

@@ -45,7 +45,7 @@ export default function HeroSection() {
               className="text-[1.15rem] font-semibold tracking-tight"
               style={{ color: isDark ? '#ffffff' : '#0f172a' }}
             >
-              Typograph
+              FontSnap
             </span>
           </div>
           <ThemeToggle />
