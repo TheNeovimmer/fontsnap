@@ -1,8 +1,8 @@
-# Font Downloader
+# Typograph
 
 A web tool to discover and download fonts from any website. Simply enter a URL to extract all fonts used on the page, preview them live, and download with a single click.
 
-## ⚠️ Important Legal Disclaimer
+## Important Legal Disclaimer
 
 **This tool does not grant licenses or permissions for font usage.**
 
@@ -12,12 +12,13 @@ Always verify that you have proper licensing before using downloaded fonts in yo
 
 ## Features
 
-- 🔍 Extract fonts from any website URL
-- 👀 Live preview of each font with customizable text
-- 📥 One-click download support for WOFF, WOFF2, TTF, and OTF formats
-- ✅ **Find legal alternatives** - Get free Google Fonts suggestions similar to extracted fonts
-- ⚡ Fast extraction with modern Next.js architecture
-- 🎨 Beautiful UI with smooth animations
+- Extract fonts from any website URL
+- Live preview of each font with customizable text
+- One-click download support for WOFF, WOFF2, TTF, and OTF formats
+- Find legal alternatives — get free Google Fonts suggestions similar to extracted fonts
+- Dark / light theme toggle with smooth transitions
+- Fast extraction with modern Next.js architecture
+- Beautiful UI with smooth animations
 
 ## Getting Started
 
@@ -30,30 +31,18 @@ Always verify that you have proper licensing before using downloaded fonts in yo
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/shoryabansalgithub/font-stealer.git
-cd font-stealer
+git clone https://github.com/TheNeovimmer/typo_graph.git
+cd typo_graph
 ```
 
 2. Install dependencies:
 ```bash
 npm install
-# or
-yarn install
-# or
-pnpm install
-# or
-bun install
 ```
 
 3. Run the development server:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
@@ -65,21 +54,21 @@ bun dev
 3. All discovered fonts are displayed with their family names, weights, and styles
 4. Click on any font to preview it with custom text
 5. Download fonts individually with the download button
-6. **NEW:** Click "Find Legal Alternatives" to discover free Google Fonts with similar styling - perfect for avoiding licensing issues!
+6. Click "Find Legal Alternatives" to discover free Google Fonts with similar styling — perfect for avoiding licensing issues
 
 ## Tech Stack
 
-- **Framework:** Next.js 15 (App Router)
+- **Framework:** Next.js 16 (App Router, Turbopack)
 - **Language:** TypeScript
-- **Styling:** Tailwind CSS
+- **Styling:** Tailwind CSS v4
 - **Animations:** Framer Motion
 - **Font Loading:** Next.js Font Optimization
 
 ## API Routes
 
-- `/api/extract` - POST endpoint to extract fonts from a given URL
-- `/api/font` - GET endpoint to fetch and serve font files
-- `/api/match` - POST endpoint to find similar free/open-source font alternatives from Google Fonts
+- `POST /api/extract` — extract fonts from a given URL
+- `GET /api/font` — fetch and serve font files
+- `POST /api/match` — find similar free/open-source font alternatives from Google Fonts
 
 ## Supported Font Formats
 
@@ -90,7 +79,7 @@ bun dev
 
 ## License
 
-MIT License - See LICENSE file for details
+MIT License — see [LICENSE](LICENSE) for details.
 
 ## Contributing
 
