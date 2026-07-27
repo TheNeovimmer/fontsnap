@@ -45,7 +45,10 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   icons: {
-    icon: "/logo.png",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/logo.png", type: "image/png", sizes: "1024x1024" },
+    ],
   },
 };
 

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <defs>
+    <linearGradient id="snap" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="80" rx="16" fill="#0f172a"/>
+  <text x="28" y="55" font-family="Inter, system-ui, sans-serif" font-size="42" font-weight="700" fill="white" letter-spacing="-1.5">Font</text>
+  <text x="138" y="55" font-family="Inter, system-ui, sans-serif" font-size="42" font-weight="700" fill="url(#snap)" letter-spacing="-1.5">Snap</text>
+  <rect x="248" y="30" width="28" height="28" rx="6" fill="url(#snap)"/>
+  <path d="M256 44 L262 50 L272 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
