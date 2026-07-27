@@ -1,0 +1,369 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'CustomFont';
+  src: url('/01d1396bd69a228a-s.p.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CustomHeading';
+  src: url('/008d67fd73a4c01b.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg-canvas: #eff4fb;
+  --bg-shell: #f7faff;
+  --surface-1: #ffffff;
+  --surface-2: #f1f6ff;
+  --line-soft: #d7e2f1;
+  --line-strong: #bccde4;
+  --text-1: #102035;
+  --text-2: #3f536d;
+  --text-3: #6b7f98;
+  --brand-1: #1d62dd;
+  --brand-2: #0f4fbd;
+  --brand-soft: #e7f0ff;
+  --success: #15855f;
+  --danger: #bf3f4a;
+}
+
+.dark {
+  --bg-canvas: #0c1018;
+  --bg-shell: #111620;
+  --surface-1: #161c28;
+  --surface-2: #1c2435;
+  --line-soft: #262f42;
+  --line-strong: #34405a;
+  --text-1: #e4e9f2;
+  --text-2: #a8b4c8;
+  --text-3: #7a8aa3;
+  --brand-1: #4d8af0;
+  --brand-2: #6ba0f7;
+  --brand-soft: #1a2a4a;
+  --success: #34c77b;
+  --danger: #f06b75;
+}
+
+@theme inline {
+  --color-background: var(--bg-canvas);
+  --color-foreground: var(--text-1);
+  --font-sans: var(--active-font, var(--font-manrope)), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background:
+    radial-gradient(120% 90% at 50% -14%, #ffffff 0%, #edf4ff 44%, #e6eefb 100%),
+    linear-gradient(180deg, #eef3fb 0%, #e7effb 100%);
+  color: var(--text-1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dark body {
+  background:
+    radial-gradient(120% 90% at 50% -14%, #141a26 0%, #0e1320 44%, #0c1018 100%),
+    linear-gradient(180deg, #0e1320 0%, #0c1018 100%);
+  color: var(--text-1);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+:focus-visible {
+  outline: none;
+}
+
+::selection {
+  background: rgba(0, 0, 0, 0.1);
+  color: inherit;
+}
+
+.dark ::selection {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.app-shell {
+  width: min(100% - 1.2rem, 1220px);
+  margin-inline: auto;
+  border: 1px solid var(--line-soft);
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.93), rgba(247, 251, 255, 0.9));
+  box-shadow:
+    0 34px 80px -58px rgba(14, 34, 67, 0.45),
+    0 8px 26px rgba(8, 32, 70, 0.13);
+  backdrop-filter: blur(10px);
+}
+
+.dark .app-shell {
+  background: linear-gradient(180deg, rgba(22, 28, 40, 0.93), rgba(12, 16, 24, 0.9));
+  box-shadow:
+    0 34px 80px -58px rgba(0, 0, 0, 0.6),
+    0 8px 26px rgba(0, 0, 0, 0.3);
+}
+
+.panel {
+  border: 1px solid var(--line-soft);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(243, 248, 255, 0.95));
+  box-shadow: 0 14px 30px -22px rgba(12, 30, 60, 0.4);
+}
+
+.dark .panel {
+  background: linear-gradient(180deg, rgba(22, 28, 40, 0.95), rgba(18, 24, 36, 0.95));
+  box-shadow: 0 14px 30px -22px rgba(0, 0, 0, 0.5);
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.48rem;
+  border-radius: 999px;
+  border: 1px solid #c7d7ef;
+  background: linear-gradient(180deg, #f5f9ff 0%, #eaf2ff 100%);
+  color: var(--brand-2);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  padding: 0.44rem 0.8rem;
+}
+
+.dark .kicker {
+  border-color: var(--line-soft);
+  background: linear-gradient(180deg, var(--surface-2) 0%, var(--surface-1) 100%);
+  color: var(--brand-1);
+}
+
+.numeric {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+input,
+textarea,
+select {
+  font-size: 16px;
+}
+
+/* ── Scan results screen (second screen) ─────────────────────────── */
+
+/*
+ * Scoped to .scan-page so none of this reaches the landing page, which is
+ * being treated separately. Everything below is additive.
+ *
+ * The base token set carries ink/line/brand but only three ink steps, which is
+ * not enough for a screen made almost entirely of quiet type. The extra steps
+ * are declared here once and referenced everywhere rather than retyped.
+ */
+.scan-page {
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.012em;
+
+  --scan-ink-1: var(--text-1);
+  --scan-ink-2: var(--text-2);
+  --scan-ink-3: #55697f;
+  --scan-ink-4: #66798f;
+  --scan-ink-5: #748aa4;
+  --scan-line-1: #d2ddee;
+  --scan-line-2: #dce6f5;
+  --scan-line-3: #e8eef8;
+  --scan-wash: #eef3fb;
+  --scan-specimen: #152742;
+  --scan-accent: var(--brand-1);
+  --scan-accent-deep: var(--brand-2);
+}
+
+.dark .scan-page {
+  --scan-ink-3: #8a9bb5;
+  --scan-ink-4: #7a8da6;
+  --scan-ink-5: #5a6d85;
+  --scan-line-1: #2a3650;
+  --scan-line-2: #243048;
+  --scan-line-3: #1e2840;
+  --scan-wash: #1a2438;
+  --scan-specimen: #c8d4e4;
+}
+
+/*
+ * The base sheet kills :focus-visible globally with no replacement. Rather than
+ * depend on every element remembering .scan-focusable, every focusable thing
+ * inside the scan screen gets the ring back by default.
+ */
+.scan-page :is(a, button, input, textarea, select, summary, [tabindex]):focus-visible,
+.scan-page .scan-focusable:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px #fff,
+    0 0 0 4px rgba(29, 98, 221, 0.45);
+}
+
+.dark .scan-page :is(a, button, input, textarea, select, summary, [tabindex]):focus-visible,
+.dark .scan-page .scan-focusable:focus-visible {
+  box-shadow:
+    0 0 0 2px var(--bg-canvas),
+    0 0 0 4px rgba(77, 138, 240, 0.45);
+}
+
+/* A heading focused only to move the screen reader should not draw a ring. */
+.scan-page [tabindex='-1']:focus-visible {
+  box-shadow: none;
+}
+
+/*
+ * The specimen card. It rests almost flat so the page reads as a sheet of
+ * typography rather than a tray of widgets; the lift arrives only on intent.
+ */
+.specimen-card {
+  box-shadow:
+    0 1px 2px rgba(16, 32, 53, 0.03),
+    0 10px 28px -22px rgba(12, 30, 60, 0.3);
+}
+
+.dark .specimen-card {
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.1),
+    0 10px 28px -22px rgba(0, 0, 0, 0.4);
+}
+
+@media (hover: hover) {
+  .specimen-card:hover {
+    border-color: #c6d6ec;
+    box-shadow:
+      0 1px 2px rgba(16, 32, 53, 0.04),
+      0 18px 40px -26px rgba(12, 30, 60, 0.42);
+  }
+}
+
+.dark .specimen-card:hover {
+  border-color: var(--line-strong);
+}
+
+.specimen-card:focus-within {
+  border-color: #c6d6ec;
+  box-shadow:
+    0 1px 2px rgba(16, 32, 53, 0.04),
+    0 18px 40px -26px rgba(12, 30, 60, 0.42);
+}
+
+/*
+ * The specimen is the input. It carries no box or border at rest - a field
+ * outline around the type would compete with the type - so the affordance is a
+ * faint baseline rule on hover and the standard ring once focused.
+ */
+.scan-page .specimen-line[contenteditable] {
+  cursor: text;
+  box-decoration-break: clone;
+}
+
+@media (hover: hover) {
+  .scan-page .specimen-line[contenteditable]:hover:not(:focus) {
+    box-shadow: inset 0 -1px 0 0 var(--scan-line-1);
+  }
+}
+
+.scan-page .specimen-line[contenteditable]:focus-visible,
+.scan-page .specimen-line[contenteditable]:focus {
+  outline: none;
+  box-shadow: inset 0 -2px 0 0 var(--scan-accent);
+}
+
+.scan-page .specimen-line[contenteditable]:empty::before {
+  content: attr(data-placeholder);
+  color: var(--scan-ink-5);
+}
+
+/* Swapping the rendered face is a content change, so it crossfades in place
+   instead of sliding - the specimen must not move while it is being judged.
+   Driven by a transition on opacity in the component, not a keyed remount. */
+
+@keyframes scan-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@keyframes scan-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes scan-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.scan-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(226, 232, 240, 0.55) 0%,
+    rgba(226, 232, 240, 0.95) 45%,
+    rgba(226, 232, 240, 0.55) 90%
+  );
+  background-size: 200% 100%;
+  animation: scan-shimmer 1.4s linear infinite;
+}
+
+.dark .scan-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(42, 54, 80, 0.55) 0%,
+    rgba(42, 54, 80, 0.95) 45%,
+    rgba(42, 54, 80, 0.55) 90%
+  );
+  background-size: 200% 100%;
+  animation: scan-shimmer 1.4s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scan-shimmer {
+    animation: none;
+    background: rgba(226, 232, 240, 0.7);
+  }
+
+  .dark .scan-shimmer {
+    background: rgba(42, 54, 80, 0.7);
+  }
+}
