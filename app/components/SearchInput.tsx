@@ -16,11 +16,7 @@ export default function SearchInput({ onSearch, loading }: SearchInputProps) {
     event.preventDefault();
     if (loading || !url.trim()) return;
 
-    let target = url.trim();
-    if (!target.startsWith('http://') && !target.startsWith('https://')) {
-      target = `https://${target}`;
-    }
-    onSearch(target);
+    onSearch(url.trim());
   };
 
   return (
@@ -46,7 +42,7 @@ export default function SearchInput({ onSearch, loading }: SearchInputProps) {
             <input
               id="site-url"
               ref={inputRef}
-              type="url"
+              type="text"
               value={url}
               onChange={(event) => setUrl(event.target.value)}
               placeholder="Get Started with a URL..."

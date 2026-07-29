@@ -209,7 +209,11 @@ export async function POST(request: NextRequest) {
     try {
       targetUrl = new URL(url);
     } catch {
-      return NextResponse.json({ error: 'Invalid URL' }, { status: 400 });
+      try {
+        targetUrl = new URL(`https://${url}`);
+      } catch {
+        return NextResponse.json({ error: 'Invalid URL' }, { status: 400 });
+      }
     }
 
     const realFonts = await extractFontsWithPlaywright(targetUrl.href);

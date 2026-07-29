@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 type Theme = 'light' | 'dark';
 
@@ -30,19 +30,22 @@ export function useTheme() {
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(getInitialTheme);
-  const didInit = useRef(false);
+  const [theme, setTheme] = useState<Theme>('light');
 
-  // Apply on every toggle change
+  // Read real preference after mount (avoids hydration mismatch)
   useEffect(() => {
-    if (!didInit.current) {
-      didInit.current = true;
-      return;
-    }
+    const preferred = getInitialTheme();
+    setTheme(preferred);
+  }, []);
+
+  // Apply theme class + persist whenever it changes
+  useEffect(() => {
     applyTheme(theme);
   }, [theme]);
 
-  const toggle = useCallback(() => setTheme((p) => (p === 'light' ? 'dark' : 'light')), []);
+  const toggle = useCallback(() => {
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ theme, toggle }}>

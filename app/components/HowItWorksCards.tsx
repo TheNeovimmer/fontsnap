@@ -188,11 +188,11 @@ export default function HowItWorksCards() {
   const cards = [
     {
       title: "Extract Configuration",
-      description: "Provide any URL to let our engine parse its stylesheets, instantly extracting all typography files and DOM declarations.",
+      description: "Provide any URL to let our engine parse its stylesheets, instantly extracting all font files and DOM declarations.",
       illustration: <ExtractIllustration isDark={isDark} />
     },
     {
-      title: "Analyze Typographics",
+      title: "Analyze Fonts",
       description: "We deep-dive into the CSS properties, isolating perfect weights, optical sizing, and specific variable axes in play.",
       illustration: <AnalyzeIllustration isDark={isDark} />
     },

@@ -19,7 +19,7 @@ const TESTIMONIALS: Testimonial[] = [
   {
     id: '1',
     title: '"Best in class tooling"',
-    body: 'After trying every typography extraction tool out there, this is the one that stuck. The quality and consistency are unmatched.',
+    body: 'After trying every font extraction tool out there, this is the one that stuck. The quality and consistency are unmatched.',
     author: 'Olivia Martinez',
     avatarColor: 'bg-emerald-500',
     className: 'top-[-8%] left-[15%] md:top-[5%] md:left-[10%]',
@@ -27,7 +27,7 @@ const TESTIMONIALS: Testimonial[] = [
   {
     id: '2',
     title: '"Saved me hours of work"',
-    body: 'Clients love the results. Every project we deliver now gets compliments on the typography. It has genuinely increased the perceived value of our work.',
+    body: 'Clients love the results. Every project we deliver now gets compliments on the fonts. It has genuinely increased the perceived value of our work.',
     author: 'Robert Kim',
     avatarColor: 'bg-amber-400',
     className: 'bottom-[10%] left-[5%] md:bottom-[20%] md:left-[8%]',
